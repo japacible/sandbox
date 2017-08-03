@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Preload</title>
+</head>
+<body>
+  <video preload='metadata' playsinline controls 
+  		src='https://media.w3.org/2010/05/sintel/trailer.mp4'></video>
+  <div id='commentary'></div>
+</body>
+<script>
+var video = document.querySelector('video');
+video.onloadedmetadata = function() {
+  var newDiv = document.createElement('div');
+  newDiv.innerHTML = 'metadata loaded';
+  document.getElementById('commentary').appendChild(newDiv);
+};
+</script>
+</html>
